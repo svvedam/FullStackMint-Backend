@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "37eb4659-df79-4c9b-9257-b9697c6a9d4c",
+		"name": "MintTesting",
+		"description": "Mint application testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Plaid transactions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"client_id\":\"5c9d5ad2f330e20013d49666\",\n\t\"secret\":\"6616dd19815afce9ecaf634163acbe\",\n\t\"access_token\":\"public-development-ee6e10a889ba63dca7d3d9e7482400\",\n\t\"start_date\":\"2019-03-03\",\n\t\"end_date\": \"2019-04-03\"\n\n} "
+				},
+				"url": {
+					"raw": "https://development.plaid.com/transactions/get",
+					"protocol": "https",
+					"host": [
+						"development",
+						"plaid",
+						"com"
+					],
+					"path": [
+						"transactions",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateCategory Recreation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"categoryName\": \"Recreation\",\n\t\"budget\": 150\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/categories/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAccount1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"accountName\":\"Plaid Silver Standard 0.1% Interest Saving\",\n\t\"subType\":\"savings\",\n\t\"type\":\"depository\",\n\t\"current\":\"210\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateTransaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"date\": \"2019-02-12\",\n\t\"amount\": 50\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/transactions/5/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions",
+						"5",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAccount2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"accountName\":\"Plaid Bronze Standard 0.2% Interest CD\",\n\t\"subType\":\"cd\",\n\t\"type\":\"depository\",\n\t\"current\":\"410\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAccount3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"accountName\":\"Plaid Diamond 12.5% APR Interest Credit Card\",\n\t\"subType\":\"credit card\",\n\t\"type\":\"credit\",\n\t\"current\":\"410\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create category food and drink",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"categoryName\": \"Food & Drink\",\n\t\"budget\": 200\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/categories/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category Travel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"categoryName\": \"Travel\",\n\t\"budget\": 500\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/categories/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
